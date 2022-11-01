@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/coste_del_servicio"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/coste_del_servicio"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pregunta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/califica_el_servicio_recivido"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coste_del_servicio" />
+
+    <RadioGroup
+        android:id="@+id/seleccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/seleccion_espectacular"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pregunta">
+
+        <RadioButton
+            android:id="@+id/seleccion_espectacular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/espectacular_20" />
+
+        <RadioButton
+            android:id="@+id/seleccion_muy_bueno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/muy_bueno_18" />
+
+        <RadioButton
+            android:id="@+id/seleccion_bueno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bueno_15" />
+
+    </RadioGroup>
+
+    <Switch
+        android:id="@+id/switch_para_redondear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="@string/quieres_redondear_la_propina"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/seleccion"
+        app:layout_constraintTop_toBottomOf="@id/seleccion" />
+
+    <Button
+        android:id="@+id/calcular_propina_boton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/calcular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/switch_para_redondear" />
+
+    <TextView
+        android:id="@+id/coste_propina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calcular_propina_boton"
+        tools:text= "Cantidad: 10" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
