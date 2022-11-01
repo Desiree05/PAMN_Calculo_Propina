@@ -29,11 +29,21 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        val porcentajePropina = when (botonSeleccionado) {
+        var porcentajePropina = when (botonSeleccionado) {
             R.id.seleccion_espectacular -> 0.20
             R.id.seleccion_muy_bueno -> 0.18
             R.id.seleccion_bueno -> 0.15
+            R.id.seleccion_otro -> binding.costeDelServicio.text.toString().toDoubleOrNull()
             else -> 0.0
+        }
+
+        if(porcentajePropina == null){
+            binding.costePropina.text = ""
+            return
+        }
+
+        if(botonSeleccionado == R.id.seleccion_otro){
+            porcentajePropina /= 1000
         }
 
         var propina = porcentajePropina*coste
@@ -45,6 +55,10 @@ class MainActivity : AppCompatActivity() {
 
         val propinaFormateada = NumberFormat.getCurrencyInstance().format(propina)
         binding.costePropina.text = getString(R.string.cantidad_propina, propinaFormateada)
+
+        val total = coste + propina
+        val totalFormateado = NumberFormat.getCurrencyInstance().format(total)
+        binding.costeTotal.text = getString(R.string.coste_total, totalFormateado)
     }
 
 }

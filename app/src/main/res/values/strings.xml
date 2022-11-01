@@ -5,7 +5,9 @@
     <string name="muy_bueno_18">Muy bueno (18%)</string>
     <string name="espectacular_20">Espectacular (20%)</string>
     <string name="bueno_15">Bueno (15%)</string>
+    <string name="porcentaje_propina">Especificar porcentaje propina: </string>
     <string name="quieres_redondear_la_propina">¿Quieres redondear la propina?</string>
     <string name="calcular">Calcular</string>
     <string name="cantidad_propina">Cantidad de la propina: %s</string>
+    <string name="coste_total">Coste total: %s</string>
 </resources>
